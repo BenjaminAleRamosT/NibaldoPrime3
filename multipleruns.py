@@ -6,18 +6,26 @@ Created on Fri Jun 16 16:11:35 2023
 """
 
 import pandas as pd
+import prp as pr
 import trn as tr
 import trn1 as tr1
 import tst as ts
 import matplotlib.pyplot as plt
+
+from tqdm import tqdm
+
+def prep_time():
+    for i in tqdm(range(1)):
+        pr.main()
+
 
 def main(runs = 5):
     
     cost_df = pd.DataFrame()
     fsco_df = pd.DataFrame()
     
-    for i in range(runs):
-        print('Corriendo run_',i+1)
+    for i in tqdm(range(runs)):
+        print('\nCorriendo run_',i+1)
         tr.main()
         ts.main()
         

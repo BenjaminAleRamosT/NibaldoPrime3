@@ -32,12 +32,11 @@ def train_softmax(X, Y, Param):
     W =[ ut.iniW(Y.shape[0], X.shape[0])]
     V, S = [np.zeros((Y.shape[0], X.shape[0]))], [np.zeros((Y.shape[0], X.shape[0]))]
     Cost = []
-    idx = np.random.permutation(X.shape[1])
-    xe, ye = X[:, idx], Y[:, idx]
+    
     for Iter in range(1, Param[0]+1):
+        idx = np.random.permutation(X.shape[1])
+        xe, ye = X[:, idx], Y[:, idx]
         
-        
-
         W, V, S, c = train_sft_batch(xe, ye, W, V, S, Param)
 
         Cost.append(np.mean(c))
@@ -77,11 +76,11 @@ def train_dae(x, Param):
     Param_ = Param[8:]
 
     W, V, S = ut.iniWs(x.shape[0], Param_)
-    xe = x[:, np.random.permutation(x.shape[1])]
+    
     
     Cost = []
     for Iter in range(1, Param[5]+1):
-        
+        xe = x[:, np.random.permutation(x.shape[1])]
 
         W, V, S, c = train_dae_batch(xe, W, V, S, Param)
 

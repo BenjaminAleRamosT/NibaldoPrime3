@@ -223,7 +223,7 @@ def updW_madam(W, V, S, gW, t, u=0.001, b1 = 0.9 , b2 = 0.999, e = 10**-6):
     
     for i in range(len(W)):
         V[i] = (b1 * V[i]) + (1-b1)*(gW[i])
-        S[i] = (b2 * S[i]) + (1-b2)*((gW[i])**2)
+        S[i] = (b2 * S[i]) + ((1-b2)*(gW[i])**2)
         gAdam = (np.sqrt(1-(b2**t))/(1-(b1**t))) *  ((V[i]) / (np.sqrt(S[i]+e)))
         W[i] = W[i] - (u * gAdam)
     
