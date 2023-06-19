@@ -22,7 +22,7 @@ def create_input_label(Data, Param):
         
                 x = np.fft.fft(x_frame)
                 
-                # x = x[:len(x)//2]
+                x = x[:len(x)//2]
                                 
                 x = np.abs(x)
                 
