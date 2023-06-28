@@ -1,6 +1,8 @@
 # NibaldoPrime
 
-NOTA: 6.0, al final se realizo un cambio en pos de que funcionara, se añadieron los pesos del decoder a la red final. No es realmente lo que pide el profe, pero se logra llegar a 100 fscore de manera estable.
+NOTA: 6.0,
+
+al final se realizo un cambio en pos de que funcionara, se añadieron los pesos del decoder a la red final. No es realmente lo que pide el profe, pero se logra llegar a 100 fscore de manera estable.
 
 Esto se logra comentando las lineas siguientes:
 
